@@ -1,0 +1,142 @@
+[gd_scene load_steps=5 format=3 uid="uid://crfm0ifnw8s7b"]
+
+[ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_v7lsc"]
+[ext_resource type="Texture2D" uid="uid://ck4vttk6w72o7" path="res://Assets/pngtree-speech-bubble-png-image_15769537.png" id="2_bnmuq"]
+[ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="3_7opqq"]
+[ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_maubc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
+position = Vector2(576.5, 326.5)
+scale = Vector2(1.79627, 1.80278)
+texture = ExtResource("1_v7lsc")
+
+[node name="Pngtree-speech-bubble-png-image15769537" type="Sprite2D" parent="."]
+position = Vector2(581.5, 212)
+scale = Vector2(0.5028, 0.254755)
+texture = ExtResource("2_bnmuq")
+
+[node name="Happy2" type="Sprite2D" parent="."]
+position = Vector2(988, 482)
+scale = Vector2(1.11572, 1.11016)
+texture = ExtResource("3_7opqq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 58.0
+offset_right = 885.0
+offset_bottom = 367.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 20
+text = "No final, Lara aprendeu 
+que a ______ está no amor 
+e na _________ que damos 
+ao que ___________.
+
+E assim, o __________ 
+encantado continuou a 
+encantar a todos que 
+____________."
+vertical_alignment = 1
+
+[node name="BotaoT05BMagia" type="Button" parent="."]
+offset_left = 53.0
+offset_top = 370.0
+offset_right = 207.0
+offset_bottom = 430.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "MAGIA"
+
+[node name="BotaoT05BAtencao" type="Button" parent="."]
+offset_left = 54.0
+offset_top = 443.0
+offset_right = 182.0
+offset_bottom = 503.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "ATENÇÃO"
+
+[node name="BotaoT05BAmamos01" type="Button" parent="."]
+offset_left = 54.0
+offset_top = 514.0
+offset_right = 235.0
+offset_bottom = 574.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "AMAMOS"
+
+[node name="BotaoT05BJardim" type="Button" parent="."]
+offset_left = 294.0
+offset_top = 442.0
+offset_right = 512.0
+offset_bottom = 502.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "JARDIM"
+
+[node name="BotaoT05BAmamos02" type="Button" parent="."]
+offset_left = 280.0
+offset_top = 514.0
+offset_right = 468.0
+offset_bottom = 574.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "AMAMOS"
+
+[node name="BotaoT05B01" type="Button" parent="."]
+offset_left = 435.0
+offset_top = 106.0
+offset_right = 503.0
+offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "01
+"
+
+[node name="BotaoT05B02" type="Button" parent="."]
+offset_left = 428.0
+offset_top = 143.0
+offset_right = 496.0
+offset_bottom = 182.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "02
+"
+
+[node name="BotaoT05B03" type="Button" parent="."]
+offset_left = 487.0
+offset_top = 158.0
+offset_right = 555.0
+offset_bottom = 197.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "03
+"
+
+[node name="BotaoT05B04" type="Button" parent="."]
+offset_left = 565.0
+offset_top = 207.0
+offset_right = 633.0
+offset_bottom = 246.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "04"
+
+[node name="BotaoT05B05" type="Button" parent="."]
+offset_left = 373.0
+offset_top = 288.0
+offset_right = 441.0
+offset_bottom = 327.0
+theme_override_fonts/font = ExtResource("4_maubc")
+theme_override_font_sizes/font_size = 30
+text = "05"

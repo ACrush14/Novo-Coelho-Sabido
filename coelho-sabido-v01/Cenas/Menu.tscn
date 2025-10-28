@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://dohrs1o7tls6g"]
+
+[ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_suxtg"]
+[ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="2_qif5a"]
+[ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_u7eip"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
+position = Vector2(576.5, 326.5)
+scale = Vector2(1.79627, 1.80278)
+texture = ExtResource("1_suxtg")
+
+[node name="Happy2" type="Sprite2D" parent="."]
+position = Vector2(588, 315)
+texture = ExtResource("2_qif5a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 104.0
+offset_right = 906.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("2_u7eip")
+theme_override_font_sizes/font_size = 30
+text = "COELHO SABIDO WANNABE
+"
+
+[node name="Começar2" type="Button" parent="."]
+offset_left = 703.0
+offset_top = 487.0
+offset_right = 996.0
+offset_bottom = 555.0
+theme_override_fonts/font = ExtResource("2_u7eip")
+theme_override_font_sizes/font_size = 40
+text = "Sair"
+
+[node name="Começar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 488.0
+offset_right = 489.0
+offset_bottom = 556.0
+theme_override_fonts/font = ExtResource("2_u7eip")
+theme_override_font_sizes/font_size = 40
+text = "Começar"

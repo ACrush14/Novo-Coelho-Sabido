@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7xthr80emd5r"]
+
+[ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_h6mb5"]
+[ext_resource type="Texture2D" uid="uid://ck4vttk6w72o7" path="res://Assets/pngtree-speech-bubble-png-image_15769537.png" id="2_awdmd"]
+[ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="3_tyg8x"]
+[ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_mc3ap"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
+position = Vector2(576.5, 326.5)
+scale = Vector2(1.79627, 1.80278)
+texture = ExtResource("1_h6mb5")
+
+[node name="Pngtree-speech-bubble-png-image15769537" type="Sprite2D" parent="."]
+position = Vector2(581.5, 212)
+scale = Vector2(0.5028, 0.254755)
+texture = ExtResource("2_awdmd")
+
+[node name="Happy2" type="Sprite2D" parent="."]
+position = Vector2(988, 482)
+scale = Vector2(1.11572, 1.11016)
+texture = ExtResource("3_tyg8x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 327.0
+offset_top = 58.0
+offset_right = 885.0
+offset_bottom = 367.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mc3ap")
+theme_override_font_sizes/font_size = 20
+text = "Parabéns! Você viu toda
+a história.
+
+"
+vertical_alignment = 1

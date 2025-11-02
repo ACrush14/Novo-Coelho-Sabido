@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm7kl343tn67"]
+[gd_scene load_steps=6 format=3 uid="uid://cm7kl343tn67"]
 
+[ext_resource type="Script" uid="uid://ddpidw5u1oyr" path="res://Scripts/motivo.gd" id="1_dflmk"]
 [ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_fr0t4"]
-[ext_resource type="Texture2D" uid="uid://ck4vttk6w72o7" path="res://Assets/pngtree-speech-bubble-png-image_15769537.png" id="2_p4htd"]
 [ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="2_rkhd2"]
+[ext_resource type="Texture2D" uid="uid://dnkbvrwyb054k" path="res://Assets/pngegg.png" id="3_7gqcb"]
 [ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_7gqcb"]
 
 [node name="Control" type="Control"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dflmk")
 
 [node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
 position = Vector2(576.5, 326.5)
@@ -19,14 +21,14 @@ scale = Vector2(1.79627, 1.80278)
 texture = ExtResource("1_fr0t4")
 
 [node name="Happy2" type="Sprite2D" parent="."]
-position = Vector2(967, 412)
-scale = Vector2(0.621134, 0.615807)
+position = Vector2(965, 451.5)
+scale = Vector2(1.2890625, 1.1601563)
 texture = ExtResource("2_rkhd2")
 
 [node name="Pngtree-speech-bubble-png-image15769537" type="Sprite2D" parent="."]
-position = Vector2(581, 196)
-scale = Vector2(0.366775, 0.229475)
-texture = ExtResource("2_p4htd")
+position = Vector2(586, 202.5)
+scale = Vector2(0.84687495, 0.47727272)
+texture = ExtResource("3_7gqcb")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -54,4 +56,6 @@ offset_right = 726.0
 offset_bottom = 541.0
 theme_override_fonts/font = ExtResource("4_7gqcb")
 theme_override_font_sizes/font_size = 40
-text = "Texto 01"
+text = "Começar"
+
+[connection signal="pressed" from="Texto 01" to="." method="_on_texto_01_pressed"]

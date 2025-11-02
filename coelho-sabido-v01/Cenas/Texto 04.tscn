@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs2yl5gmxemo6"]
+[gd_scene load_steps=8 format=3 uid="uid://cs2yl5gmxemo6"]
 
 [ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_4hewq"]
-[ext_resource type="Texture2D" uid="uid://ck4vttk6w72o7" path="res://Assets/pngtree-speech-bubble-png-image_15769537.png" id="2_23wkh"]
+[ext_resource type="Script" uid="uid://3amw0qakicvd" path="res://Scripts/logica_pares.gd" id="1_23wkh"]
+[ext_resource type="Texture2D" uid="uid://dnkbvrwyb054k" path="res://Assets/pngegg.png" id="2_4hewq"]
+[ext_resource type="PackedScene" uid="uid://crfm0ifnw8s7b" path="res://Cenas/Texto 05.tscn" id="2_cl8c5"]
 [ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="3_h2tna"]
+[ext_resource type="PackedScene" uid="uid://cdjgulnd86yr7" path="res://Cenas/Falhou.tscn" id="3_t8bc6"]
 [ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_cl8c5"]
 
 [node name="Control" type="Control"]
@@ -12,16 +15,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_23wkh")
+pares_numeros = Array[NodePath]([NodePath("Numeros/BotaoT04B01"), NodePath("Numeros/BotaoT04B02"), NodePath("Numeros/BotaoT04B03"), NodePath("Numeros/BotaoT04B04"), NodePath("Numeros/BotaoT04B05"), NodePath("Numeros/BotaoT04B06"), NodePath("Numeros/BotaoT04B07")])
+pares_palavras = Array[NodePath]([NodePath("Palavras/BotaoT04BLagarto"), NodePath("Palavras/BotaoT04BEncanto"), NodePath("Palavras/BotaoT04BCuidar"), NodePath("Palavras/BotaoT04BCarinho"), NodePath("Palavras/BotaoT04BPlantas"), NodePath("Palavras/BotaoT04BPassaros"), NodePath("Palavras/BotaoT04BBonito")])
+proxima_cena = ExtResource("2_cl8c5")
+cena_falhou = ExtResource("3_t8bc6")
+pontos_pra_vencer = 7
 
 [node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
 position = Vector2(576.5, 326.5)
 scale = Vector2(1.79627, 1.80278)
 texture = ExtResource("1_4hewq")
 
-[node name="Pngtree-speech-bubble-png-image15769537" type="Sprite2D" parent="."]
-position = Vector2(581.5, 212)
-scale = Vector2(0.5028, 0.254755)
-texture = ExtResource("2_23wkh")
+[node name="Pngegg" type="Sprite2D" parent="."]
+position = Vector2(589.5, 243)
+scale = Vector2(1.1140627, 0.73251736)
+texture = ExtResource("2_4hewq")
 
 [node name="Happy2" type="Sprite2D" parent="."]
 position = Vector2(988, 482)
@@ -51,7 +60,9 @@ ____________ e cheio de vida.
 "
 vertical_alignment = 1
 
-[node name="BotaoT04BLagarto" type="Button" parent="."]
+[node name="Palavras" type="Node" parent="."]
+
+[node name="BotaoT04BLagarto" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 53.0
 offset_top = 370.0
 offset_right = 271.0
@@ -60,16 +71,16 @@ theme_override_fonts/font = ExtResource("4_cl8c5")
 theme_override_font_sizes/font_size = 30
 text = "LAGARTO"
 
-[node name="BotaoT04BEncanto" type="Button" parent="."]
+[node name="BotaoT04BEncanto" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 54.0
 offset_top = 443.0
-offset_right = 182.0
+offset_right = 272.0
 offset_bottom = 503.0
 theme_override_fonts/font = ExtResource("4_cl8c5")
 theme_override_font_sizes/font_size = 30
 text = "ENCANTO"
 
-[node name="BotaoT04BCuidar" type="Button" parent="."]
+[node name="BotaoT04BCuidar" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 54.0
 offset_top = 514.0
 offset_right = 235.0
@@ -78,7 +89,7 @@ theme_override_fonts/font = ExtResource("4_cl8c5")
 theme_override_font_sizes/font_size = 30
 text = "CUIDAR"
 
-[node name="BotaoT04BCarinho" type="Button" parent="."]
+[node name="BotaoT04BCarinho" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 294.0
 offset_top = 442.0
 offset_right = 512.0
@@ -87,16 +98,16 @@ theme_override_fonts/font = ExtResource("4_cl8c5")
 theme_override_font_sizes/font_size = 30
 text = "CARINHO"
 
-[node name="BotaoT04BPlantas" type="Button" parent="."]
+[node name="BotaoT04BPlantas" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 280.0
 offset_top = 514.0
-offset_right = 468.0
+offset_right = 498.0
 offset_bottom = 574.0
 theme_override_fonts/font = ExtResource("4_cl8c5")
 theme_override_font_sizes/font_size = 30
 text = "PLANTAS"
 
-[node name="BotaoT04BPassaros" type="Button" parent="."]
+[node name="BotaoT04BPassaros" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 534.0
 offset_top = 442.0
 offset_right = 782.0
@@ -105,7 +116,7 @@ theme_override_fonts/font = ExtResource("4_cl8c5")
 theme_override_font_sizes/font_size = 30
 text = "PÁSSAROS"
 
-[node name="BotaoT04BBonito" type="Button" parent="."]
+[node name="BotaoT04BBonito" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 518.0
 offset_top = 513.0
 offset_right = 736.0
@@ -114,69 +125,71 @@ theme_override_fonts/font = ExtResource("4_cl8c5")
 theme_override_font_sizes/font_size = 30
 text = "BONITO"
 
-[node name="BotaoT04B01" type="Button" parent="."]
-offset_left = 742.0
-offset_top = 54.0
-offset_right = 810.0
-offset_bottom = 93.0
+[node name="Numeros" type="Node" parent="."]
+
+[node name="BotaoT04B01" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 730.0
+offset_top = 68.0
+offset_right = 851.0
+offset_bottom = 89.0
 theme_override_fonts/font = ExtResource("4_cl8c5")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 12
 text = "01
 "
 
-[node name="BotaoT04B02" type="Button" parent="."]
-offset_left = 523.0
-offset_top = 103.0
-offset_right = 591.0
-offset_bottom = 142.0
+[node name="BotaoT04B02" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 488.0
+offset_top = 114.0
+offset_right = 613.0
+offset_bottom = 135.0
 theme_override_fonts/font = ExtResource("4_cl8c5")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 12
 text = "02
 "
 
-[node name="BotaoT04B03" type="Button" parent="."]
-offset_left = 583.0
-offset_top = 123.0
-offset_right = 651.0
-offset_bottom = 162.0
+[node name="BotaoT04B03" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 551.0
+offset_top = 140.0
+offset_right = 663.0
+offset_bottom = 161.0
 theme_override_fonts/font = ExtResource("4_cl8c5")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 12
 text = "03
 "
 
-[node name="BotaoT04B04" type="Button" parent="."]
-offset_left = 541.0
-offset_top = 154.0
-offset_right = 609.0
-offset_bottom = 193.0
+[node name="BotaoT04B04" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 530.0
+offset_top = 164.0
+offset_right = 676.0
+offset_bottom = 185.0
 theme_override_fonts/font = ExtResource("4_cl8c5")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 12
 text = "04"
 
-[node name="BotaoT04B05" type="Button" parent="."]
-offset_left = 515.0
-offset_top = 223.0
-offset_right = 583.0
-offset_bottom = 262.0
+[node name="BotaoT04B05" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 488.0
+offset_top = 235.0
+offset_right = 625.0
+offset_bottom = 256.0
 theme_override_fonts/font = ExtResource("4_cl8c5")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 12
 text = "05"
 
-[node name="BotaoT04B06" type="Button" parent="."]
-offset_left = 679.0
-offset_top = 246.0
-offset_right = 747.0
-offset_bottom = 285.0
+[node name="BotaoT04B06" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 639.0
+offset_top = 260.0
+offset_right = 790.0
+offset_bottom = 281.0
 theme_override_fonts/font = ExtResource("4_cl8c5")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 12
 text = "06
 "
 
-[node name="BotaoT04B07" type="Button" parent="."]
-offset_left = 382.0
-offset_top = 295.0
-offset_right = 450.0
-offset_bottom = 334.0
+[node name="BotaoT04B07" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 327.0
+offset_top = 306.0
+offset_right = 475.0
+offset_bottom = 327.0
 theme_override_fonts/font = ExtResource("4_cl8c5")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 12
 text = "07"

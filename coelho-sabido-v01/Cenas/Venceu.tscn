@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7xthr80emd5r"]
+[gd_scene load_steps=6 format=3 uid="uid://c7xthr80emd5r"]
 
+[ext_resource type="Script" uid="uid://kg8a8gbs5h6f" path="res://Scripts/venceu.gd" id="1_awdmd"]
 [ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_h6mb5"]
-[ext_resource type="Texture2D" uid="uid://ck4vttk6w72o7" path="res://Assets/pngtree-speech-bubble-png-image_15769537.png" id="2_awdmd"]
+[ext_resource type="Texture2D" uid="uid://dnkbvrwyb054k" path="res://Assets/pngegg.png" id="2_h6mb5"]
 [ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="3_tyg8x"]
 [ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_mc3ap"]
 
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_awdmd")
 
 [node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
 position = Vector2(576.5, 326.5)
@@ -19,9 +21,9 @@ scale = Vector2(1.79627, 1.80278)
 texture = ExtResource("1_h6mb5")
 
 [node name="Pngtree-speech-bubble-png-image15769537" type="Sprite2D" parent="."]
-position = Vector2(581.5, 212)
-scale = Vector2(0.5028, 0.254755)
-texture = ExtResource("2_awdmd")
+position = Vector2(535.00006, 231.00002)
+scale = Vector2(1.040625, 0.55244756)
+texture = ExtResource("2_h6mb5")
 
 [node name="Happy2" type="Sprite2D" parent="."]
 position = Vector2(988, 482)
@@ -29,6 +31,7 @@ scale = Vector2(1.11572, 1.11016)
 texture = ExtResource("3_tyg8x")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 327.0
 offset_top = 58.0
 offset_right = 885.0
@@ -41,3 +44,15 @@ a história.
 
 "
 vertical_alignment = 1
+
+[node name="Sair" type="Button" parent="."]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 496.0
+offset_right = 640.0
+offset_bottom = 564.0
+theme_override_fonts/font = ExtResource("4_mc3ap")
+theme_override_font_sizes/font_size = 40
+text = "Sair"
+
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]

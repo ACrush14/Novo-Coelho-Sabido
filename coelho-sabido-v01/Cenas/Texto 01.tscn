@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfi4wc7jh6yam"]
+[gd_scene load_steps=8 format=3 uid="uid://dfi4wc7jh6yam"]
 
 [ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_oqr7k"]
+[ext_resource type="Script" uid="uid://3amw0qakicvd" path="res://Scripts/logica_pares.gd" id="1_yio2j"]
 [ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="2_753u0"]
-[ext_resource type="Texture2D" uid="uid://ck4vttk6w72o7" path="res://Assets/pngtree-speech-bubble-png-image_15769537.png" id="3_vpyvd"]
+[ext_resource type="PackedScene" uid="uid://cp5y5amwb4jsd" path="res://Cenas/Texto 02.tscn" id="2_re6xw"]
+[ext_resource type="PackedScene" uid="uid://cdjgulnd86yr7" path="res://Cenas/Falhou.tscn" id="3_hhmnc"]
+[ext_resource type="Texture2D" uid="uid://dnkbvrwyb054k" path="res://Assets/pngegg.png" id="3_yio2j"]
 [ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_vpyvd"]
 
 [node name="Control" type="Control"]
@@ -12,16 +15,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yio2j")
+pares_numeros = Array[NodePath]([NodePath("Numeros/BotaoT01B01"), NodePath("Numeros/BotaoT01B02"), NodePath("Numeros/BotaoT01B03"), NodePath("Numeros/BotaoT01B04")])
+pares_palavras = Array[NodePath]([NodePath("Palavras/BotaoT01BMenina"), NodePath("Palavras/BotaoT01BJardim01"), NodePath("Palavras/BotaoT01BJardim02"), NodePath("Palavras/BotaoT01BEncantado")])
+proxima_cena = ExtResource("2_re6xw")
+cena_falhou = ExtResource("3_hhmnc")
+pontos_pra_vencer = 4
 
 [node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
 position = Vector2(576.5, 326.5)
 scale = Vector2(1.79627, 1.80278)
 texture = ExtResource("1_oqr7k")
 
-[node name="Pngtree-speech-bubble-png-image15769537" type="Sprite2D" parent="."]
-position = Vector2(581.5, 212)
-scale = Vector2(0.5028, 0.254755)
-texture = ExtResource("3_vpyvd")
+[node name="Pngegg" type="Sprite2D" parent="."]
+position = Vector2(611, 246)
+scale = Vector2(1.3968749, 0.6826923)
+texture = ExtResource("3_yio2j")
 
 [node name="Happy2" type="Sprite2D" parent="."]
 position = Vector2(988, 482)
@@ -48,8 +57,9 @@ ____________ mas ninguém
 sabia por quê."
 vertical_alignment = 1
 
-[node name="BotaoT01BMenina" type="Button" parent="."]
-layout_mode = 0
+[node name="Palavras" type="Node" parent="."]
+
+[node name="BotaoT01BMenina" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 54.0
 offset_top = 443.0
 offset_right = 254.0
@@ -58,7 +68,7 @@ theme_override_fonts/font = ExtResource("4_vpyvd")
 theme_override_font_sizes/font_size = 30
 text = "MENINA"
 
-[node name="BotaoT01BJardim01" type="Button" parent="."]
+[node name="BotaoT01BJardim01" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 286.0
 offset_top = 442.0
 offset_right = 486.0
@@ -67,7 +77,7 @@ theme_override_fonts/font = ExtResource("4_vpyvd")
 theme_override_font_sizes/font_size = 30
 text = "JARDIM"
 
-[node name="BotaoT01BJardim02" type="Button" parent="."]
+[node name="BotaoT01BJardim02" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 54.0
 offset_top = 519.0
 offset_right = 254.0
@@ -76,7 +86,7 @@ theme_override_fonts/font = ExtResource("4_vpyvd")
 theme_override_font_sizes/font_size = 30
 text = "JARDIM"
 
-[node name="BotaoT01BEncantado" type="Button" parent="."]
+[node name="BotaoT01BEncantado" type="Button" parent="Palavras" groups=["Palavras"]]
 offset_left = 283.0
 offset_top = 520.0
 offset_right = 561.0
@@ -85,41 +95,43 @@ theme_override_fonts/font = ExtResource("4_vpyvd")
 theme_override_font_sizes/font_size = 30
 text = "ENCANTADO"
 
-[node name="BotaoT01B01" type="Button" parent="."]
-offset_left = 588.0
-offset_top = 120.0
-offset_right = 656.0
-offset_bottom = 159.0
+[node name="Numeros" type="Node" parent="."]
+
+[node name="BotaoT01B01" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 575.0
+offset_top = 139.0
+offset_right = 673.0
+offset_bottom = 163.0
 theme_override_fonts/font = ExtResource("4_vpyvd")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 15
 text = "01
 "
 
-[node name="BotaoT01B02" type="Button" parent="."]
-offset_left = 322.0
+[node name="BotaoT01B02" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 286.0
 offset_top = 190.0
-offset_right = 390.0
-offset_bottom = 229.0
+offset_right = 423.0
+offset_bottom = 214.0
 theme_override_fonts/font = ExtResource("4_vpyvd")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 15
 text = "02
 "
 
-[node name="BotaoT01B03" type="Button" parent="."]
-offset_left = 535.0
-offset_top = 219.0
-offset_right = 603.0
+[node name="BotaoT01B03" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 510.0
+offset_top = 234.0
+offset_right = 629.0
 offset_bottom = 258.0
 theme_override_fonts/font = ExtResource("4_vpyvd")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 15
 text = "03
 "
 
-[node name="BotaoT01B04" type="Button" parent="."]
-offset_left = 328.0
-offset_top = 257.0
-offset_right = 396.0
-offset_bottom = 296.0
+[node name="BotaoT01B04" type="Button" parent="Numeros" groups=["Numeros"]]
+offset_left = 286.0
+offset_top = 259.0
+offset_right = 433.0
+offset_bottom = 283.0
 theme_override_fonts/font = ExtResource("4_vpyvd")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 15
 text = "04"

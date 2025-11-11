@@ -101,6 +101,13 @@ func gain_point():
 func lose_life():
 	lives -= 1
 	print("Vidas: ", lives)
+	if lives == 2:
+		$Life4.visible = false
+		$Nolife5.visible = true
+	if lives == 1:
+		$Life3.visible = false
+		$Nolife4.visible = true
+	
 	# lives_label.text = "Vidas: " + str(lives)
 	# Aqui você pode verificar se é game over (ex: lives <= 0)
 	

@@ -5,6 +5,7 @@ var lives = 3
 
 #Aqui é a variável que guarda o estado.
 var selected_num_button: Button = null
+var selected_word_button: Button = null
 
 
 #Aqui vão ser definidos os pares, preencher no inspetor do Godot
@@ -14,118 +15,133 @@ var selected_num_button: Button = null
 #Variaveis para mudar a cena se vencer ou perder, e quantidade de pontos
 @export var proxima_cena: PackedScene
 @export var cena_falhou: PackedScene
-@export var pontos_pra_vencer: int
+@export var pontos_para_vencer: int
 
-# --- Nós da UI (Opcional) ---
-# @onready var score_label = $ScoreLabel
-# @onready var lives_label = $LivesLabel
+# --- CORREÇÃO 1: Mapeamento Lógico dos Corações ---
+@onready var life_coracao_3 = $Life4
+@onready var life_coracao_2 = $Life3
+@onready var life_coracao_1 = $Life2
+
+@onready var nolife_coracao_3 = $Nolife4 # Par de 3 vidas (Life4)
+@onready var nolife_coracao_2 = $Nolife3 # Par de 2 vidas (Life3)
+@onready var nolife_coracao_1 = $Nolife5 # Par de 1 vida (Life2)
+
 
 #Função Ready!
 func _ready():
-	# CORRETO!
 	for button in get_tree().get_nodes_in_group("Numeros"):
 		button.pressed.connect(_on_number_pressed.bind(button))
 		
-	# CORRETO!
 	for button in get_tree().get_nodes_in_group("Palavras"):
 		button.pressed.connect(_on_word_pressed.bind(button))
 		
+	update_life_visuals()
 		
-
-
 #FUNÇÕES DE SINAL
 #Função do Numero
 func _on_number_pressed(button: Button):
-	#Se os botões estão desativado, não faz nada
 	if button.disabled:
 		return
 		
-	#Se dois numeros forem clicados seguidamente, jogador perde vida
-	if selected_num_button != null:
+	if selected_word_button != null:
+		check_pair(button, selected_word_button)
+	
+	# --- CORREÇÃO 2: Checar a variável 'selected_num_button' ---
+	elif selected_num_button != null:
 		print("ERRO: Clicou em numero-numero")
-		lose_life() # Ativado
+		lose_life()
 		reset_selection() 
 	
-	#Jogador vai clicar num numero agora:
 	else:
-		print("Numero selecionado: ", button.text)
+		# Corrigido para .name, que é mais útil para botões de número
+		print("Numero selecionado: ", button.name) 
 		selected_num_button = button
-		#Cor para ajudar 
-		button.modulate = Color(0.8, 0.8, 1.0) #um tom azul.
+		button.modulate = Color(0.8, 0.8, 1.0)
 		
 #Função da Palavra
 func _on_word_pressed(button: Button):
-	#Se os botões estão desativado, não faz nada
 	if button.disabled:
 		return
 		
-	# CORRIGIDO AQUI: (linha 47)
-	# Jogador clicou em uma palavra, mas NÃO tinha número selecionado
-	if selected_num_button == null:
-		print("ERRO: Clicou em palavra sem número")
-		#Perde uma vida por isso
-		lose_life() # Ativado
-		
-	#Se tinha um numero selecionado e clicou na palavra
-	else:
-		#checagem de par correto
-		if is_correct_pair(selected_num_button, button):
-			print("Acertou o par!")
-			gain_point() # Ativado
-			#Desativar os botoes do par para nao serem usados de novo
-			selected_num_button.disabled = true
-			button.disabled = true
-		else:
-			print("Erro: Par incorreto")
-			lose_life() # Ativado
-		#independente de acertar ou errar, reseta a seleção:
+	if selected_num_button != null:
+		check_pair(selected_num_button, button)
+
+	# --- CORREÇÃO 2: Checar a variável 'selected_word_button' ---
+	elif selected_word_button != null:
+		print("ERRO: Clicou em palavra-palavra")
+		lose_life()
 		reset_selection()
+		
+	else:
+		# Corrigido para .text, que é mais útil para botões de palavra
+		print("Palavra selecionada: ", button.text) 
+		selected_word_button = button
+		button.modulate = Color(0.8, 0.8, 1.0)
 
 # LOGICA
+
+#Função para checar os pares
+func check_pair(num_btn: Button, word_btn: Button):
+	if is_correct_pair(num_btn, word_btn):
+		print("Acertou o par!")
+		gain_point()
+		num_btn.disabled = true
+		word_btn.disabled = true
+	else:
+		print("Erro: Par incorreto")
+		lose_life()
+		
+	reset_selection()
+
 func is_correct_pair(num_btn: Button, word_btn: Button) -> bool:
-	#Pega o caminho de cada no
 	var num_path = self.get_path_to(num_btn)
 	var word_path = self.get_path_to(word_btn)
 	
-	#procura o indice do numero no array de pares
 	var index = pares_numeros.find(num_path)
 	
-	#Se tiver numero e palavra no MESMO INDICE do outro array
 	if index != -1 and pares_palavras[index] == word_path:
 		return true
 		
-	#Se não, par errado
 	return false
 	
 func gain_point():
 	score += 1
 	print("Pontos: ", score)
-	if score >= pontos_pra_vencer:
+	if score >= pontos_para_vencer:
 		print("Indo para o prox nivel! Carregando: ", proxima_cena.get_path())
 		mudar_cena(proxima_cena)
-	# score_label.text = "Pontos: " + str(score)
-	# Aqui você pode verificar se o jogador ganhou (ex: score == 4)
 	
 func lose_life():
 	lives -= 1
 	print("Vidas: ", lives)
+	
+	update_life_visuals()
 	if lives <= 0:
 		print("GAME OVER! Carregando: ", cena_falhou.get_path())
 		mudar_cena(cena_falhou)
-	# lives_label.text = "Vidas: " + str(lives)
-	# Aqui você pode verificar se é game over (ex: lives <= 0)
 	
 func reset_selection():
-	# CORRIGIDO AQUI: (linha 104)
-	#Resetar a cor se um botão estava selecionado
+	# Está correto
 	if selected_num_button != null:
 		selected_num_button.modulate = Color(1, 1, 1)
+		selected_num_button = null
 		
-	# CORRIGIDO AQUI: (linha 107)
-	#Limpa a variavel do estado
-	selected_num_button = null
+	if selected_word_button != null:
+		selected_word_button.modulate = Color(1, 1, 1)
+		selected_word_button = null
+		
 	print("Seleção resetada")
+		
 	
+func update_life_visuals():
+	#Coração 3, depois 2 depois 1
+	life_coracao_3.visible = (lives >= 3)
+	nolife_coracao_3.visible = (lives < 3)
+	life_coracao_2.visible = (lives >= 2)
+	nolife_coracao_2.visible = (lives < 2)
+	life_coracao_1.visible = (lives >= 1)
+	nolife_coracao_1.visible = (lives < 1)
+
 #Função para mudar de cena
 func mudar_cena(cena: PackedScene):
 	if cena == null:

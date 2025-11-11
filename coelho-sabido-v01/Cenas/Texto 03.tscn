@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvdmocxtqftil"]
+[gd_scene load_steps=11 format=3 uid="uid://dvdmocxtqftil"]
 
 [ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_fl6u1"]
 [ext_resource type="Script" uid="uid://3amw0qakicvd" path="res://Scripts/logica_pares.gd" id="1_vpe6w"]
 [ext_resource type="Texture2D" uid="uid://dnkbvrwyb054k" path="res://Assets/pngegg.png" id="2_fl6u1"]
 [ext_resource type="PackedScene" uid="uid://cs2yl5gmxemo6" path="res://Cenas/Texto 04.tscn" id="2_tvid5"]
 [ext_resource type="PackedScene" uid="uid://cdjgulnd86yr7" path="res://Cenas/Falhou.tscn" id="3_5w7py"]
-[ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="3_ry8xx"]
 [ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_tvid5"]
+[ext_resource type="Texture2D" uid="uid://co6p3eddx0t4q" path="res://Assets/YoMoji!/kid.png" id="6_5w7py"]
+[ext_resource type="Texture2D" uid="uid://b4twrvhrkte6i" path="res://Assets/BLOCOTEXT2.png" id="8_5w7py"]
+[ext_resource type="Texture2D" uid="uid://dtqlbsjje0bm6" path="res://Assets/LIFE2 (1).png" id="9_ruwex"]
+[ext_resource type="Texture2D" uid="uid://dwcd3duxkixdn" path="res://Assets/NOLIFE3.png" id="10_v87co"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +23,7 @@ pares_numeros = Array[NodePath]([NodePath("Numeros/BotaoT03B01"), NodePath("Nume
 pares_palavras = Array[NodePath]([NodePath("Palavras/BotaoT03BJardim01"), NodePath("Palavras/BotaoT03BImaginacao"), NodePath("Palavras/BotaoT03BVida"), NodePath("Palavras/BotaoT03BPerguntou")])
 proxima_cena = ExtResource("2_tvid5")
 cena_falhou = ExtResource("3_5w7py")
-pontos_pra_vencer = 4
+pontos_para_vencer = 4
 
 [node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
 position = Vector2(576.5, 326.5)
@@ -35,7 +38,7 @@ texture = ExtResource("2_fl6u1")
 [node name="Happy2" type="Sprite2D" parent="."]
 position = Vector2(988, 482)
 scale = Vector2(1.11572, 1.11016)
-texture = ExtResource("3_ry8xx")
+texture = ExtResource("6_5w7py")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -135,3 +138,38 @@ offset_bottom = 283.0
 theme_override_fonts/font = ExtResource("4_tvid5")
 theme_override_font_sizes/font_size = 12
 text = "04"
+
+[node name="Blocotext2" type="Sprite2D" parent="."]
+position = Vector2(346.5, 516)
+scale = Vector2(1.9095892, 0.8045977)
+texture = ExtResource("8_5w7py")
+
+[node name="Life4" type="Sprite2D" parent="."]
+position = Vector2(116.000015, 22)
+scale = Vector2(0.80000013, 0.80000013)
+texture = ExtResource("9_ruwex")
+
+[node name="Life3" type="Sprite2D" parent="."]
+position = Vector2(70, 22)
+scale = Vector2(0.80000013, 0.80000013)
+texture = ExtResource("9_ruwex")
+
+[node name="Life2" type="Sprite2D" parent="."]
+position = Vector2(18, 22)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("9_ruwex")
+
+[node name="Nolife4" type="Sprite2D" parent="."]
+position = Vector2(68, 22)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("10_v87co")
+
+[node name="Nolife5" type="Sprite2D" parent="."]
+position = Vector2(118.000015, 23)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("10_v87co")
+
+[node name="Nolife3" type="Sprite2D" parent="."]
+position = Vector2(18.000002, 21)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("10_v87co")

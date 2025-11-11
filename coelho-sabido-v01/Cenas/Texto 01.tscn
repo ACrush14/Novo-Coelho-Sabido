@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfi4wc7jh6yam"]
+[gd_scene load_steps=11 format=3 uid="uid://dfi4wc7jh6yam"]
 
 [ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_oqr7k"]
 [ext_resource type="Script" uid="uid://3amw0qakicvd" path="res://Scripts/logica_pares.gd" id="1_yio2j"]
@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cdjgulnd86yr7" path="res://Cenas/Falhou.tscn" id="3_hhmnc"]
 [ext_resource type="Texture2D" uid="uid://dnkbvrwyb054k" path="res://Assets/pngegg.png" id="3_yio2j"]
 [ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_vpyvd"]
+[ext_resource type="Texture2D" uid="uid://b4twrvhrkte6i" path="res://Assets/BLOCOTEXT2.png" id="8_hhmnc"]
+[ext_resource type="Texture2D" uid="uid://dtqlbsjje0bm6" path="res://Assets/LIFE2 (1).png" id="9_h5dlw"]
+[ext_resource type="Texture2D" uid="uid://dwcd3duxkixdn" path="res://Assets/NOLIFE3.png" id="10_nejey"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +23,7 @@ pares_numeros = Array[NodePath]([NodePath("Numeros/BotaoT01B01"), NodePath("Nume
 pares_palavras = Array[NodePath]([NodePath("Palavras/BotaoT01BMenina"), NodePath("Palavras/BotaoT01BJardim01"), NodePath("Palavras/BotaoT01BJardim02"), NodePath("Palavras/BotaoT01BEncantado")])
 proxima_cena = ExtResource("2_re6xw")
 cena_falhou = ExtResource("3_hhmnc")
-pontos_pra_vencer = 4
+pontos_para_vencer = 4
 
 [node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
 position = Vector2(576.5, 326.5)
@@ -135,3 +138,38 @@ offset_bottom = 283.0
 theme_override_fonts/font = ExtResource("4_vpyvd")
 theme_override_font_sizes/font_size = 15
 text = "04"
+
+[node name="Blocotext2" type="Sprite2D" parent="."]
+position = Vector2(300.75, 506.25)
+scale = Vector2(1.6041096, 1.0249043)
+texture = ExtResource("8_hhmnc")
+
+[node name="Life4" type="Sprite2D" parent="."]
+position = Vector2(116.000015, 22)
+scale = Vector2(0.80000013, 0.80000013)
+texture = ExtResource("9_h5dlw")
+
+[node name="Life3" type="Sprite2D" parent="."]
+position = Vector2(70, 22)
+scale = Vector2(0.80000013, 0.80000013)
+texture = ExtResource("9_h5dlw")
+
+[node name="Life2" type="Sprite2D" parent="."]
+position = Vector2(18, 22)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("9_h5dlw")
+
+[node name="Nolife4" type="Sprite2D" parent="."]
+position = Vector2(68, 22)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("10_nejey")
+
+[node name="Nolife5" type="Sprite2D" parent="."]
+position = Vector2(118.000015, 23)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("10_nejey")
+
+[node name="Nolife3" type="Sprite2D" parent="."]
+position = Vector2(18.000002, 21)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("10_nejey")

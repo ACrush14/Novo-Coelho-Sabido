@@ -31,7 +31,7 @@ offset_right = 906.0
 offset_bottom = 169.0
 theme_override_fonts/font = ExtResource("2_u7eip")
 theme_override_font_sizes/font_size = 30
-text = "COELHO SABIDO WANNABE
+text = "A HISTÓRIA DE LARA
 "
 
 [node name="Sair" type="Button" parent="."]

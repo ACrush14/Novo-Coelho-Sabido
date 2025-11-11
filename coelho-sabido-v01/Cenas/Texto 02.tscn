@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp5y5amwb4jsd"]
+[gd_scene load_steps=11 format=3 uid="uid://cp5y5amwb4jsd"]
 
 [ext_resource type="Script" uid="uid://3amw0qakicvd" path="res://Scripts/logica_pares.gd" id="1_ifjvb"]
 [ext_resource type="Texture2D" uid="uid://7dphwbye1uvp" path="res://Assets/0b218a84-6016-446f-9deb-0b519afd8478.jpg" id="1_ip11r"]
 [ext_resource type="PackedScene" uid="uid://dvdmocxtqftil" path="res://Cenas/Texto 03.tscn" id="2_di321"]
 [ext_resource type="Texture2D" uid="uid://dnkbvrwyb054k" path="res://Assets/pngegg.png" id="2_ip11r"]
-[ext_resource type="Texture2D" uid="uid://cifdpk0cb0wnu" path="res://Assets/YoMoji!/happy 2.png" id="3_82c28"]
 [ext_resource type="PackedScene" uid="uid://cdjgulnd86yr7" path="res://Cenas/Falhou.tscn" id="3_rmwjo"]
 [ext_resource type="FontFile" uid="uid://blhugc381c0nu" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_di321"]
+[ext_resource type="Texture2D" uid="uid://c6qyr1dhpu81o" path="res://Assets/YoMoji!/cute.png" id="6_rmwjo"]
+[ext_resource type="Texture2D" uid="uid://b4twrvhrkte6i" path="res://Assets/BLOCOTEXT2.png" id="8_rmwjo"]
+[ext_resource type="Texture2D" uid="uid://dtqlbsjje0bm6" path="res://Assets/LIFE2 (1).png" id="9_lvyb8"]
+[ext_resource type="Texture2D" uid="uid://dwcd3duxkixdn" path="res://Assets/NOLIFE3.png" id="10_skgsn"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +23,7 @@ pares_numeros = Array[NodePath]([NodePath("Numeros/BotaoT02B01"), NodePath("Nume
 pares_palavras = Array[NodePath]([NodePath("Palavras/BotaoT02BLara"), NodePath("Palavras/BotaoT02BJardim01"), NodePath("Palavras/BotaoT02BSegredo"), NodePath("Palavras/BotaoT02BFlores"), NodePath("Palavras/BotaoT02BPassaros"), NodePath("Palavras/BotaoT02BJardim02"), NodePath("Palavras/BotaoT02BLagarto")])
 proxima_cena = ExtResource("2_di321")
 cena_falhou = ExtResource("3_rmwjo")
-pontos_pra_vencer = 7
+pontos_para_vencer = 7
 
 [node name="0b218a84-6016-446f-9Deb-0b519Afd8478" type="Sprite2D" parent="."]
 position = Vector2(576.5, 326.5)
@@ -28,14 +31,14 @@ scale = Vector2(1.79627, 1.80278)
 texture = ExtResource("1_ip11r")
 
 [node name="Pngegg" type="Sprite2D" parent="."]
-position = Vector2(605.99994, 247.00002)
-scale = Vector2(1.18125, 0.86713296)
+position = Vector2(654.00006, 240.99998)
+scale = Vector2(1.0750002, 0.86713296)
 texture = ExtResource("2_ip11r")
 
 [node name="Happy2" type="Sprite2D" parent="."]
 position = Vector2(988, 482)
 scale = Vector2(1.11572, 1.11016)
-texture = ExtResource("3_82c28")
+texture = ExtResource("6_rmwjo")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -57,71 +60,71 @@ músicas mágicas.
 
 No centro do __________, 
 encontrou um ____________ 
-lagarto que falava!
+que falava!
 "
 vertical_alignment = 1
 
 [node name="Palavras" type="Node" parent="."]
 
 [node name="BotaoT02BLara" type="Button" parent="Palavras" groups=["Palavras"]]
-offset_left = 54.0
-offset_top = 443.0
-offset_right = 182.0
-offset_bottom = 503.0
+offset_left = 19.0
+offset_top = 457.0
+offset_right = 147.0
+offset_bottom = 517.0
 theme_override_fonts/font = ExtResource("4_di321")
 theme_override_font_sizes/font_size = 30
 text = "LARA"
 
 [node name="BotaoT02BJardim01" type="Button" parent="Palavras" groups=["Palavras"]]
-offset_left = 54.0
-offset_top = 514.0
-offset_right = 254.0
-offset_bottom = 574.0
+offset_left = 17.0
+offset_top = 533.0
+offset_right = 217.0
+offset_bottom = 593.0
 theme_override_fonts/font = ExtResource("4_di321")
 theme_override_font_sizes/font_size = 30
 text = "JARDIM"
 
 [node name="BotaoT02BSegredo" type="Button" parent="Palavras" groups=["Palavras"]]
-offset_left = 216.0
-offset_top = 444.0
-offset_right = 434.0
-offset_bottom = 504.0
+offset_left = 159.0
+offset_top = 459.0
+offset_right = 377.0
+offset_bottom = 519.0
 theme_override_fonts/font = ExtResource("4_di321")
 theme_override_font_sizes/font_size = 30
 text = "SEGREDO"
 
 [node name="BotaoT02BFlores" type="Button" parent="Palavras" groups=["Palavras"]]
-offset_left = 280.0
-offset_top = 514.0
-offset_right = 468.0
-offset_bottom = 574.0
+offset_left = 225.0
+offset_top = 535.0
+offset_right = 413.0
+offset_bottom = 595.0
 theme_override_fonts/font = ExtResource("4_di321")
 theme_override_font_sizes/font_size = 30
 text = "FLORES"
 
 [node name="BotaoT02BPassaros" type="Button" parent="Palavras" groups=["Palavras"]]
-offset_left = 456.0
-offset_top = 444.0
-offset_right = 704.0
-offset_bottom = 504.0
+offset_left = 387.0
+offset_top = 459.0
+offset_right = 635.0
+offset_bottom = 519.0
 theme_override_fonts/font = ExtResource("4_di321")
 theme_override_font_sizes/font_size = 30
 text = "PÁSSAROS"
 
 [node name="BotaoT02BJardim02" type="Button" parent="Palavras" groups=["Palavras"]]
-offset_left = 486.0
-offset_top = 514.0
-offset_right = 704.0
-offset_bottom = 574.0
+offset_left = 426.0
+offset_top = 537.0
+offset_right = 644.0
+offset_bottom = 597.0
 theme_override_fonts/font = ExtResource("4_di321")
 theme_override_font_sizes/font_size = 30
 text = "JARDIM"
 
 [node name="BotaoT02BLagarto" type="Button" parent="Palavras" groups=["Palavras"]]
-offset_left = 53.0
-offset_top = 370.0
-offset_right = 271.0
-offset_bottom = 430.0
+offset_left = 19.0
+offset_top = 387.0
+offset_right = 237.0
+offset_bottom = 453.0
 theme_override_fonts/font = ExtResource("4_di321")
 theme_override_font_sizes/font_size = 30
 text = "LAGARTO"
@@ -194,3 +197,38 @@ offset_bottom = 311.0
 theme_override_fonts/font = ExtResource("4_di321")
 theme_override_font_sizes/font_size = 12
 text = "07"
+
+[node name="Blocotext2" type="Sprite2D" parent="."]
+position = Vector2(351.99997, 510.62497)
+scale = Vector2(1.9726028, 1.0086209)
+texture = ExtResource("8_rmwjo")
+
+[node name="Life4" type="Sprite2D" parent="."]
+position = Vector2(116.000015, 22)
+scale = Vector2(0.80000013, 0.80000013)
+texture = ExtResource("9_lvyb8")
+
+[node name="Life3" type="Sprite2D" parent="."]
+position = Vector2(70, 22)
+scale = Vector2(0.80000013, 0.80000013)
+texture = ExtResource("9_lvyb8")
+
+[node name="Life2" type="Sprite2D" parent="."]
+position = Vector2(18, 22)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("9_lvyb8")
+
+[node name="Nolife4" type="Sprite2D" parent="."]
+position = Vector2(68, 22)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("10_skgsn")
+
+[node name="Nolife5" type="Sprite2D" parent="."]
+position = Vector2(118.000015, 23)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("10_skgsn")
+
+[node name="Nolife3" type="Sprite2D" parent="."]
+position = Vector2(18.000002, 21)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("10_skgsn")
